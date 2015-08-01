@@ -4,5 +4,4 @@ go:
   - tip
 
 script:
-  - go test -v ./goweb
-
+  - go test -v ./goweb.go
