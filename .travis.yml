@@ -1,13 +1,14 @@
 language: go
-
 go:
-  - tip
-
+- tip
 script:
-  - go test -v ./goweb.go
-
+- go test -v goweb.go
+- mkdir _build
+- go build goweb.go -o _build/goweb
 deploy:
   provider: releases
+  api_key:
+    secure: z3T+PKSbtrQiz8zRdwHQJdyao0VIRD4xvtDOKNrtCYRquHhaw4L+BbwM6R/uPCgOtaDnk6x4N9h8US4Fb8rmzKgsFeaTMBg3aD4rs96mJBjXJ/h7wHD0+lrLpGRBAUwzZd50Eo/V6WVccA/2ftJADzk2ZJtNomeJm2X7owFGw1fwf7nnazhjUmuZ3M62UPO7GMyNFTZywdTD7xUPUSSZunpxuOJ6lwG+mOn7yfC7+hbe/sXUJZ5CjMZBmi2RO7uhEnrGrOlMwe46BZYfMoPn851pGFBEAdzrO/gSARJJMAnTuOagyOB9xbG6GzXrTDX18NupsmHDUwtczx+yr+OyatoL6gbrw64bux7W8OH7osVGPRtZACqIN3l9IAL+4njO6kU3k2lLQntthRgHaucQ+662N6AIXc1t79BvoUE9H+3T3xwmcgFS6xcnnd7YyrLtr9ZN4yD4jWECZcrvhvLs5L8VXpZD7pQgfiZ3TQgfIEMZEj/NMjJZyNmkqD0Bq32oSbwuUmvqyPyOQduZqYZa5Qc1PqpKp6cWVluwesVOO5x1n/cVT8HZvMzHUoFuGuwbhSYiAzPj7jVk8CNsMhnA84dn54Vff2e7GCbvpnIY3h4UKm0Ahkqas1IISiz3wdubJT5s1dBTZHT+MMDYA57HPQpQTI4PGVkqUfRSbUybGZg=
   file: _build/goweb
   on:
     tags: true
