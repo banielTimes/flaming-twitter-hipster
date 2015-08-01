@@ -5,3 +5,10 @@ go:
 
 script:
   - go test -v ./goweb.go
+
+deploy:
+  provider: releases
+  file: _build/goweb
+  on:
+    tags: true
+    repo: banielTimes/flaming-twitter-hipster
