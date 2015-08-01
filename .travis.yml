@@ -4,7 +4,7 @@ go:
 script:
 - go test -v goweb.go
 - mkdir _build
-- go build goweb.go -o _build/goweb
+- go build -o _build/goweb goweb.go
 deploy:
   provider: releases
   api_key:
