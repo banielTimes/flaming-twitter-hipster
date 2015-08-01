@@ -1,6 +1,6 @@
 # flaming-twitter-hipster
 
-A Twitter wall client in golang
+a random web app
 
 ***
 
